@@ -14,10 +14,10 @@ export const ArtPostTemplate = ({
   title,
   helmet,
 }) => {
-  const PostContent = contentComponent || Content
+  const ArtPostContent = contentComponent || Content
 
   return (
-    <section className="blog-post">
+    <section className="art-post">
       {helmet || ''}
       <header>
         <h1>
