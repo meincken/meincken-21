@@ -9,6 +9,6 @@ import IndexPagePreview from './preview-templates/IndexPagePreview'
 CMS.registerMediaLibrary(cloudinary)
 
 CMS.registerPreviewTemplate('index', IndexPagePreview)
-CMS.registerPreviewTemplate('art', ArtPagePreview)
+CMS.registerPreviewTemplate('art', ArtPostPreview)
 CMS.registerPreviewTemplate('about', AboutPagePreview)
 CMS.registerPreviewTemplate('blog', BlogPostPreview)
