@@ -14,7 +14,7 @@ export default class ArtIndexPage extends React.Component {
           }}
         >
           <h1>
-            Latest Stories
+            Art
           </h1>
         </header>
         <section>
