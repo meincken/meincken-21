@@ -63,7 +63,7 @@ const Navbar = class extends React.Component {
             <Link to="/photography">
               Photograpy
             </Link>
-            <Link to="/blog">
+            <Link to="/art">
               Art
             </Link>
             <Link to="/blog">

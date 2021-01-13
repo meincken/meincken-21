@@ -25,7 +25,7 @@ export const ArtPostTemplate = ({
         </h1>
         <p>{description}</p>
       </header>
-      <PostContent content={content} />
+      <ArtPostContent content={content} />
       {tags && tags.length ? (
         <footer>
           <h4>Tags</h4>
