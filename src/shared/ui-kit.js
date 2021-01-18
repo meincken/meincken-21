@@ -104,6 +104,8 @@ export const Header = ({ title, subtitle }) => (
 );
 
 const Footer = styled.footer`
+  grid-row-start: 2;
+  grid-row-end: 3;
   grid-template-columns: repeat(12, 1fr);
   max-width: 1040px;
   margin: 0 auto;

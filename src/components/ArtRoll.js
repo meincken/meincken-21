@@ -22,18 +22,8 @@ class ArtRoll extends React.Component {
                   >
                     {post.frontmatter.title}
                   </Link>
-                  <span> &bull; </span>
-                  <span>
-                    {post.frontmatter.date}
-                  </span>
                 </p>
               </header>
-              <p>
-                {post.excerpt}
-              </p>
-              <Link to={post.fields.slug}>
-                Keep Reading →
-              </Link>
             </article>
           ))}
       </>

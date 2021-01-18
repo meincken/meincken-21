@@ -10,6 +10,10 @@ export const bodyStyles = css`
   font-weight: ${typography.weight.regular};
   background: ${color.lightest};
   color: ${color.darkest};
+  height: 100%
+  margin: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -28,6 +32,7 @@ export const bodyStyles = css`
       [main-start] minmax(0, 117rem) [main-end]
       minmax(2rem, 1fr) [full-end];
 
+    .main,
     > section {
       grid-column: main;
 
@@ -46,6 +51,12 @@ export const bodyStyles = css`
       justify-content: center;
       min-height: 50rem;
     }
+  }
+
+  #gatsby-focus-wrapper {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
   }
 
   .full-width-image {
@@ -142,6 +153,26 @@ export const bodyStyles = css`
     max-width: 100%;
     display: block;
   }
+
+  figure {
+    margin: 0;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    margin-bottom: 10px;
+    break-inside: avoid;
+
+    > img {
+     grid-row: 1 / -1;
+     grid-column: 1;
+   }
+  }
+
+  .photography {
+    column-count: 4;
+    column-gap: 10px;
+    margin: 2rem 0;
+  }
+
 `;
 
 export const GlobalStyle = createGlobalStyle`
@@ -149,15 +180,12 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 62.5%;
   }
 
+  html, body {
+    width: 100%;
+    height: 100%;
+  }
+
   body {
     ${bodyStyles}
-
-    margin: 0;
-    overflow-y: auto;
-    overflow-x: hidden;
-
-    @media print {
-      font-size: 13px;
-    }
   }
 `;

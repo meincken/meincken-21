@@ -10,6 +10,8 @@ const FooterBlock = styled.footer`
   background-color: ${color.darkest};
   border-bottom: 1px solid ${color.primary};
   display: grid;
+  grid-row-start: 3;
+  grid-row-end: 4;
   text-align: center;
   width: 100vw;
 

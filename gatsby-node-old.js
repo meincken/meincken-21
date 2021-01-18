@@ -2,12 +2,11 @@ const _ = require('lodash')
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 const { fmImagesToRelative } = require('gatsby-remark-relative-images')
-const postsPerPage = 20;
 
-exports.createPages = ({ actions, graphql, reporter }) => {
+exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
 
-  const page = graphql(`
+  return graphql(`
     {
       allMarkdownRemark(limit: 1000) {
         edges {
@@ -70,40 +69,7 @@ exports.createPages = ({ actions, graphql, reporter }) => {
         },
       })
     })
-  });
-
-  const photography = graphql(`
-    query($limit: Int!) {
-      allFlickrPhoto(limit: $limit, filter: {media: {eq: "photo"}}) {
-        pageInfo {
-          pageCount
-          currentPage
-        }
-      }
-    }
-  `,{limit: postsPerPage}).then((result) => {
-    if (result.errors) {
-      result.errors.forEach((e) => console.error(e.toString()))
-      return Promise.reject(result.errors)
-    }
-
-    const numPages = result.data.allFlickrPhoto.pageInfo.pageCount;
-
-    Array.from({length: numPages}).forEach((_, i) => {
-      createPage({
-        path: i === 0 ? `/photography/` : `/photography/${i + 1}`,
-        component: path.resolve('./src/templates/photography-post.js'),
-        context: {
-          limit: postsPerPage,
-          skip: i * postsPerPage,
-          numPages,
-          currentPage: i + 1,
-        },
-      });
-    });
-  });
-
-  return Promise.all([ page, photography ]);
+  })
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
@@ -119,3 +85,40 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     })
   }
 }
+
+// Flickr pagees
+// exports.createPages = async ({ graphql, actions, reporter }) => {
+//   const { createPage } = actions;
+//   const result = await graphql(
+//     `
+//     query($limit: Int!) {
+//       allFlickrPhoto(limit: $limit, filter: {media: {eq: "photo"}}) {
+//         pageInfo {
+//           pageCount
+//           currentPage
+//         }
+//       }
+//     }
+//     `
+//   , {limit: postsPerPage});
+//
+//   if (result.errors) {
+//     reporter.panicOnBuild(`Error while running GraphQL query.`);
+//     return;
+//   }
+//
+//   const numPages = result.data.allFlickrPhoto.pageInfo.pageCount;
+//
+//   Array.from({length: numPages}).forEach((_, i) => {
+//     createPage({
+//       path: i === 0 ? `/photography/` : `/photography/${i + 1}`,
+//       component: path.resolve('./src/templates/flickr-photo-list-template.js'),
+//       context: {
+//         limit: postsPerPage,
+//         skip: i * postsPerPage,
+//         numPages,
+//         currentPage: i + 1,
+//       },
+//     });
+//   });
+// }
