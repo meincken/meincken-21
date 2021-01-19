@@ -4,6 +4,7 @@ import { GlobalStyle } from "../shared/global";
 import { Helmet } from 'react-helmet'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
+import Social from '../components/Social'
 import useSiteMetadata from './SiteMetadata'
 import { withPrefix } from 'gatsby'
 
@@ -50,7 +51,10 @@ const TemplateWrapper = ({ children }) => {
       </Helmet>
       <GlobalStyle />
       <Navbar />
-      <main>{children}</main>
+      <main>
+        {children}
+        <Social />
+      </main>
       <Footer />
     </>
   )
