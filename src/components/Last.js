@@ -22,7 +22,7 @@ class Last extends React.Component {
       <LastBlock>
         {posts &&
           posts.map(({ node: post }) => (
-          <figure>
+          <figure key={post.id}>
             <img
               src={post.image[3].text}
               key={post.image.size}
@@ -51,6 +51,7 @@ export default () => (
         allLastfmTrack(limit: 9) {
           edges {
             node {
+              id
               image {
                 text
                 size

@@ -5,9 +5,11 @@ import PreviewCompatibleImage from './PreviewCompatibleImage'
 import styled from "styled-components";
 
 const Insta = styled.div`
-  column-count: 3;
-  column-gap: 10px;
-  margin: 2rem 0;
+  >div {
+    column-count: 3;
+    column-gap: 10px;
+    margin: 2rem 0;
+  }
 `;
 
 class Instagram extends React.Component {
@@ -17,18 +19,20 @@ class Instagram extends React.Component {
 
     return(
       <Insta>
-        {posts &&
-          posts.map(({ node: post }) => (
-            <figure>
-              <PreviewCompatibleImage
-                imageInfo={{
-                  image: post.localFile,
-                  alt: post.id,
-                }}
-              />
-            </figure>
-        ))}
-        <a href="https://instagram.com/meincken">Follow me on Instagram</a>
+        <div>
+          {posts &&
+            posts.map(({ node: post }) => (
+              <figure key={post.id}>
+                <PreviewCompatibleImage
+                  imageInfo={{
+                    image: post.localFile,
+                    alt: post.id,
+                  }}
+                />
+              </figure>
+          ))}
+        </div>
+        <a href="https://instagram.com/satanik78">Follow Satanik78 on Instagram</a>
       </Insta>
     )
   }
@@ -54,7 +58,8 @@ export default () => (
               preview
               localFile {
                 childImageSharp {
-                  fluid(maxWidth: 300, quality: 100) {
+                  fluid(maxWidth: 300, maxHeight: 300,
+                     quality: 100) {
                     ...GatsbyImageSharpFluid
                   }
                 }
