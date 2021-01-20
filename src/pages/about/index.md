@@ -1,18 +1,23 @@
 ---
-templateKey: 'about-page'
+templateKey: about-page
 path: /about
 title: About Me
 ---
-My name is Nick Meincken, I'm a web developer based in South West London with a
-wife and 2 cats. I enjoy travelling to obscure places and taking photos, but the
-current pandemic pushed me to reignite an old passion in art and illustration.
+My name is Nick Meincken, I’m a web developer living in South West London. I
+live in a cozy house with my wife Gayle and our 2 cats Truffles and Toblerone.
+When I’m not training for my next event, I’m building websites or watching
+movies whilst building websites. I enjoy good food, fine Rum and the odd Cuban
+cigar. We like to travel, and have had many strange and amazing adventures
+around the world including trips into the hot zone of Chernobyl as well as
+Vietnam, Cambodia and Borneo (this is the short list).
 
-Art and Photography have always provided me with pure escapism from my digital
-world, although lately this has merged together with the use of digital media.
-I still like to shoot film when possible, but not really having the space for a
-darkroom or wanting all the chemicals in the house, it made sense to move to
-scanning and editing pure images.
+I started meincken.com as a portfolio for my photography about 10 years ago,
+which then evolved into my web portfolio but since the incarnation of my company
+(Built By Moustache) this site then didn’t really have a use. So I have decided
+it will be a place for my inane ramblings and work which isn’t web related to sit.
+This will include my art, design and photography. Over the next few months I
+will be sorting through my past photography and art to get this all up here.
+![Toblerone](https://res.cloudinary.com/dbqtfbchc/image/upload/v1611178494/IMG_20150603_221336-300x300_xkzzon.jpg "Stink cat")
+![Truffles](https://res.cloudinary.com/dbqtfbchc/image/upload/v1611178494/IMG_20150603_221447-300x300_pte24p.jpg "Princess Truffles")
 
-Although recently I have been playing around with a number of other media like
-watercolours, acrylic paint, as well as pure ink but also experimenting with
-different paper materials. 
+![Nick & Gayle](https://res.cloudinary.com/dbqtfbchc/image/upload/v1611178494/nick-and-gayle-kinabalu_oehgvg.jpg "Nick & Gayle")
