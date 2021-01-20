@@ -8,10 +8,11 @@ import twitter from '../img/social/twitter.svg'
 
 const FooterBlock = styled.footer`
   background-color: ${color.darkest};
-  border-bottom: 1px solid ${color.primary};
+  border-top: 1px solid ${color.primary};
   display: grid;
-  grid-row-start: 3;
-  grid-row-end: 4;
+  grid-row-start: 4;
+  grid-row-end: 5;
+  padding: 2rem 0;
   text-align: center;
   width: 100vw;
 

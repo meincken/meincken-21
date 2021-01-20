@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from "styled-components"
+import { color } from "../shared/styles";
 
 const GoodreadBlock = styled.div`
   display: flex;
@@ -12,6 +13,7 @@ const GoodreadBlock = styled.div`
   }
 
   p {
+    color: ${color.lightest};
     font-size: 1.4rem;
   }
   span {
@@ -26,7 +28,7 @@ const Goodreads = class extends React.Component {
         <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1335873471l/49627.jpg" alt="49627" />
         <p>
           <span className="title">
-            Title: Sproats of Wrath
+            Title: Sprouts of Wrath
           </span>
           <span className="author">
             Author: Robert Rankin

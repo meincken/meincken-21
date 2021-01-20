@@ -53,8 +53,8 @@ const TemplateWrapper = ({ children }) => {
       <Navbar />
       <main>
         {children}
-        <Social />
       </main>
+      <Social />
       <Footer />
     </>
   )

@@ -25,6 +25,7 @@ export const bodyStyles = css`
     box-sizing: border-box;
   }
 
+  .social-section,
   main {
     display: grid;
     grid-template-columns:

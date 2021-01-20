@@ -1,3 +1,5 @@
+require("dotenv").config()
+
 module.exports = {
   siteMetadata: {
     title: 'Nick Meincken',
@@ -33,22 +35,22 @@ module.exports = {
     {
       resolve: "gatsby-source-lastfm",
       options: {
-        api_key: '7f5b4d15b9a4229c508dc74a7c73b010',
-        username: 'meincken',
+        api_key: process.env.LASTFM_API,
+        username: process.env.LASTFM_UN,
         limit: 200,
       },
     },
     {
       resolve: 'gatsby-source-flickr',
       options: {
-        api_key: 'bf898196079b6aac87ed4d1845d68297',
-        user_id: '27083134@N08',
+        api_key: process.env.FLICKR_API,
+        user_id: process.env.FLICKR_ID,
       },
     },
     {
       resolve: 'gatsby-source-instagram',
       options: {
-        username: '30193435156',
+        username: process.env.INSTAGRAM_UN,
       },
     },
     'gatsby-plugin-sharp',

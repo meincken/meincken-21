@@ -32,7 +32,6 @@ class Instagram extends React.Component {
               </figure>
           ))}
         </div>
-        <a href="https://instagram.com/satanik78">Follow Satanik78 on Instagram</a>
       </Insta>
     )
   }
