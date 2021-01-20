@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
+import PreviewCompatibleImage from './PreviewCompatibleImage'
 import styled from "styled-components";
 
 const Insta = styled.div`
@@ -19,12 +20,12 @@ class Instagram extends React.Component {
         {posts &&
           posts.map(({ node: post }) => (
             <figure>
-            <img
-              key={post.id}
-              className={`insta`}
-              alt={post.id}
-              src={post.preview}
-            />
+              <PreviewCompatibleImage
+                imageInfo={{
+                  image: post.localFile,
+                  alt: post.id,
+                }}
+              />
             </figure>
         ))}
         <a href="https://instagram.com/meincken">Follow me on Instagram</a>
@@ -51,8 +52,12 @@ export default () => (
               id
               username
               preview
-              thumbnails {
-                src
+              localFile {
+                childImageSharp {
+                  fluid(maxWidth: 300, quality: 100) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
               }
             }
           }
