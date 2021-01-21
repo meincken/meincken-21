@@ -5,7 +5,7 @@ image: /img/home-jumbotron.jpg
 heading: Cheeese doodle
 subheading: Front end developer / artist / photographer / general pest
 mainpitch:
-  title: Why Kaldi
+  title: About Me
   description: >-
     My name is Nick Meincken, I’m a web developer living in South West London. I
     live in a cozy house with my wife Gayle and our 2 cats Truffles and
