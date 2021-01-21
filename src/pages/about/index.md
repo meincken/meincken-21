@@ -3,6 +3,7 @@ templateKey: about-page
 path: /about
 title: About Me
 ---
+
 My name is Nick Meincken, I’m a web developer living in South West London. I
 live in a cozy house with my wife Gayle and our 2 cats Truffles and Toblerone.
 When I’m not training for my next event, I’m building websites or watching
@@ -17,7 +18,7 @@ which then evolved into my web portfolio but since the incarnation of my company
 it will be a place for my inane ramblings and work which isn’t web related to sit.
 This will include my art, design and photography. Over the next few months I
 will be sorting through my past photography and art to get this all up here.
+
 ![Toblerone](https://res.cloudinary.com/dbqtfbchc/image/upload/v1611178494/IMG_20150603_221336-300x300_xkzzon.jpg "Stink cat")
 ![Truffles](https://res.cloudinary.com/dbqtfbchc/image/upload/v1611178494/IMG_20150603_221447-300x300_pte24p.jpg "Princess Truffles")
-
 ![Nick & Gayle](https://res.cloudinary.com/dbqtfbchc/image/upload/v1611178494/nick-and-gayle-kinabalu_oehgvg.jpg "Nick & Gayle")

@@ -64,6 +64,19 @@ export const bodyStyles = css`
     grid-column: full;
   }
 
+  .hero-image {
+    h2 {
+      font-size: 3.5rem;
+      text-align: center;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+
+      small {
+        display: block;
+        font-size: 65%;
+      }
+    }
+  }
+
   h1,
   h2,
   h3,
@@ -172,6 +185,54 @@ export const bodyStyles = css`
     column-count: 4;
     column-gap: 10px;
     margin: 2rem 0;
+  }
+
+  .section-about {
+    p img {
+      display: inline-block;
+    }
+  }
+
+  .latest-entries {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 1rem;
+    padding: 2rem 0;
+
+    > header {
+      grid-column: span 3;
+      text-align: center;
+      font-size: 3.5rem;
+      text-transform: uppercase;
+    }
+
+    a {
+      text-decoration: none;
+
+      + small {
+        display: block;
+      }
+    }
+
+    footer {
+      grid-column: span 3;
+      padding-top: 2rem;
+    }
+
+    .blog-entry {
+      display: flex;
+      flex-flow: column;
+      justify-content: space-between;
+
+      header {
+        text-align: left;
+      }
+
+      p {
+        font-size: 1.4rem;
+        flex-grow: 1;
+      }
+    }
   }
 
 `;

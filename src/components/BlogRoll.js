@@ -1,12 +1,12 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Link, graphql, StaticQuery } from 'gatsby'
-import PreviewCompatibleImage from './PreviewCompatibleImage'
+import React from "react";
+import PropTypes from "prop-types";
+import { Link, graphql, StaticQuery } from "gatsby";
+import PreviewCompatibleImage from "./PreviewCompatibleImage";
 
 class BlogRoll extends React.Component {
   render() {
-    const { data } = this.props
-    const { edges: posts } = data.allMarkdownRemark
+    const { data } = this.props;
+    const { edges: posts } = data.allMarkdownRemark;
 
     return (
       <>
@@ -14,11 +14,15 @@ class BlogRoll extends React.Component {
           posts.map(({ node: post }) => (
             <article
               key={post.id}
-              className={`blog-list-item tile is-child box notification ${
-                post.frontmatter.featuredpost ? 'is-featured' : ''
+              className={`blog-entry ${
+                post.frontmatter.featuredpost ? "is-featured" : ""
               }`}
             >
               <header>
+                <p>
+                  <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
+                  <small>{post.frontmatter.date}</small>
+                </p>
                 {post.frontmatter.featuredimage ? (
                   <div className="featured-thumbnail">
                     <PreviewCompatibleImage
@@ -29,28 +33,13 @@ class BlogRoll extends React.Component {
                     />
                   </div>
                 ) : null}
-                <p>
-                  <Link
-                    to={post.fields.slug}
-                  >
-                    {post.frontmatter.title}
-                  </Link>
-                  <span> &bull; </span>
-                  <span>
-                    {post.frontmatter.date}
-                  </span>
-                </p>
               </header>
-              <p>
-                {post.excerpt}
-              </p>
-              <Link to={post.fields.slug}>
-                Keep Reading →
-              </Link>
+              <p>{post.excerpt}</p>
+              <Link to={post.fields.slug}>Keep Reading →</Link>
             </article>
           ))}
       </>
-    )
+    );
   }
 }
 
@@ -60,7 +49,7 @@ BlogRoll.propTypes = {
       edges: PropTypes.array,
     }),
   }),
-}
+};
 
 export default () => (
   <StaticQuery
@@ -72,7 +61,7 @@ export default () => (
         ) {
           edges {
             node {
-              excerpt(pruneLength: 400)
+              excerpt(pruneLength: 100)
               id
               fields {
                 slug
@@ -80,11 +69,11 @@ export default () => (
               frontmatter {
                 title
                 templateKey
-                date(formatString: "MMM DD YY")
+                date(formatString: "L")
                 featuredpost
                 featuredimage {
                   childImageSharp {
-                    fluid(maxWidth: 120, quality: 100) {
+                    fluid(maxWidth: 400, maxHeight: 150, quality: 100) {
                       ...GatsbyImageSharpFluid
                     }
                   }
@@ -97,4 +86,4 @@ export default () => (
     `}
     render={(data, count) => <BlogRoll data={data} count={count} />}
   />
-)
+);

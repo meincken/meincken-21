@@ -1,24 +1,14 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
+import React from "react";
+import PropTypes from "prop-types";
+import { Link, graphql } from "gatsby";
 
-import Layout from '../components/Layout'
-import Features from '../components/Features'
-import BlogRoll from '../components/BlogRoll'
+import Layout from "../components/Layout";
+import BlogRoll from "../components/BlogRoll";
 
-export const IndexPageTemplate = ({
-  image,
-  title,
-  subtitle,
-  heading,
-  subheading,
-  mainpitch,
-  description,
-  intro,
-}) => (
+export const IndexPageTemplate = ({ image, title, subtitle, mainpitch }) => (
   <>
     <div
-      className="full-width-image"
+      className="hero-image full-width-image"
       style={{
         backgroundImage: `url(${
           !!image.childImageSharp ? image.childImageSharp.fluid.src : image
@@ -27,59 +17,41 @@ export const IndexPageTemplate = ({
         backgroundAttachment: `fixed`,
       }}
     >
-      <h1>
-        {title}
-      </h1>
-      <h3>
-        {subtitle}
-      </h3>
+      <h2>
+        {title} <small>{subtitle}</small>
+      </h2>
     </div>
+
     <section>
       <div>
         <h1 className="title">{mainpitch.title}</h1>
-        <h3 className="subtitle">{mainpitch.description}</h3>
-      </div>
-      <div>
-        <h3>
-          {heading}
-        </h3>
-        <p>{description}</p>
-      </div>
-      <div>
-        <Features gridItems={intro.blurbs} />
-        <Link className="btn" to="/products">
-          See all products
-        </Link>
+        <p dangerouslySetInnerHTML={{ __html: mainpitch.description }} />
       </div>
 
-      <div>
-        <h3>
-          Latest stories
-        </h3>
+      <div className={`latest-entries`}>
+        <header>
+          <h3>Latest stories</h3>
+        </header>
         <BlogRoll />
-        <Link className="btn" to="/blog">
-          Read more
-        </Link>
+        <footer>
+          <Link className="btn" to="/blog">
+            Read more
+          </Link>
+        </footer>
       </div>
     </section>
   </>
-)
+);
 
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   subtitle: PropTypes.string,
-  heading: PropTypes.string,
-  subheading: PropTypes.string,
   mainpitch: PropTypes.object,
-  description: PropTypes.string,
-  intro: PropTypes.shape({
-    blurbs: PropTypes.array,
-  }),
-}
+};
 
 const IndexPage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark
+  const { frontmatter } = data.markdownRemark;
 
   return (
     <Layout>
@@ -87,15 +59,11 @@ const IndexPage = ({ data }) => {
         image={frontmatter.image}
         title={frontmatter.title}
         subtitle={frontmatter.subtitle}
-        heading={frontmatter.heading}
-        subheading={frontmatter.subheading}
         mainpitch={frontmatter.mainpitch}
-        description={frontmatter.description}
-        intro={frontmatter.intro}
       />
     </Layout>
-  )
-}
+  );
+};
 
 IndexPage.propTypes = {
   data: PropTypes.shape({
@@ -103,9 +71,9 @@ IndexPage.propTypes = {
       frontmatter: PropTypes.object,
     }),
   }),
-}
+};
 
-export default IndexPage
+export default IndexPage;
 
 export const pageQuery = graphql`
   query IndexPageTemplate {
@@ -120,28 +88,11 @@ export const pageQuery = graphql`
             }
           }
         }
-        heading
-        subheading
         mainpitch {
           title
-          description
-        }
-        description
-        intro {
-          blurbs {
-            image {
-              childImageSharp {
-                fluid(maxWidth: 240, quality: 64) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            text
-          }
-          heading
           description
         }
       }
     }
   }
-`
+`;
