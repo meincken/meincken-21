@@ -3,7 +3,7 @@ templateKey: blog-post
 title: Welcome to Meincken 2021
 date: 2021-01-22T14:23:08.622Z
 description: Site update for meincken.com. New start, new build, new environment.
-featuredpost: false
+featuredpost: true
 featuredimage: https://res.cloudinary.com/dbqtfbchc/image/upload/v1611178494/nick-and-gayle-kinabalu_oehgvg.jpg
 tags:
   - website
