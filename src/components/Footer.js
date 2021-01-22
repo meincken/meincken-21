@@ -59,7 +59,7 @@ const Footer = class extends React.Component {
           </div>
         </section>
         <div className="social">
-          <a title="twitter" href="https://twitter.com">
+          <a title="twitter" href="https://twitter.com/meincken">
             <img
               className="fas fa-lg"
               src={twitter}
@@ -67,7 +67,7 @@ const Footer = class extends React.Component {
               style={{ width: "2em", height: "2em" }}
             />
           </a>
-          <a title="instagram" href="https://instagram.com">
+          <a title="instagram" href="https://instagram.com/satanik78">
             <img
               src={instagram}
               alt="Instagram"
