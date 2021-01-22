@@ -35,17 +35,19 @@ const NavMenu = styled.div`
 const Navbar = class extends React.Component {
   render() {
     return (
-      <Nav role="navigation" aria-label="main-navigation">
-        <Container>
-          <Logo />
-          <NavMenu>
-            <Link to="/about">About</Link>
-            <Link to="/photography">Photograpy</Link>
-            <Link to="/art">Art</Link>
-            <Link to="/blog">Blog</Link>
-          </NavMenu>
-        </Container>
-      </Nav>
+      <header className={`global-header`}>
+        <Nav role="navigation" aria-label="main-navigation">
+          <Container>
+            <Logo />
+            <NavMenu>
+              <Link to="/about">About</Link>
+              <Link to="/photography">Photograpy</Link>
+              <Link to="/art">Art</Link>
+              <Link to="/blog">Blog</Link>
+            </NavMenu>
+          </Container>
+        </Nav>
+      </header>
     );
   }
 };

@@ -1,13 +1,16 @@
-import React from 'react'
-import Insta from '../components/Insta'
-import Goodreads from '../components/Goodreads'
-import Last from '../components/Last'
+import React from "react";
+import Insta from "../components/Insta";
+import Goodreads from "../components/Goodreads";
+import Last from "../components/Last";
 import styled from "styled-components";
 import { color } from "../shared/styles";
 
 const SocialBlock = styled.div`
   background-color: ${color.dark};
   border-top: 1px solid ${color.primary};
+  border-bottom: 1px solid ${color.primary};
+  grid-column: full;
+  margin-bottom: 2rem;
 
   > section {
     display: grid;
@@ -15,7 +18,6 @@ const SocialBlock = styled.div`
     grid-gap: 2rem;
     padding: 2rem 0;
   }
-
 `;
 
 const Social = class extends React.Component {
@@ -28,8 +30,8 @@ const Social = class extends React.Component {
           <Last />
         </section>
       </SocialBlock>
-    )
+    );
   }
-}
+};
 
-export default Social
+export default Social;

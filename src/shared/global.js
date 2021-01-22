@@ -224,13 +224,17 @@ export const bodyStyles = css`
       flex-flow: column;
       justify-content: space-between;
 
-      header {
+      header p {
+        font-size: 1.4rem;
         text-align: left;
       }
 
-      p {
-        font-size: 1.4rem;
+      .post-content {
         flex-grow: 1;
+
+        p {
+          font-size: 1.4rem;
+        }
       }
     }
   }

@@ -23,6 +23,8 @@ class BlogRoll extends React.Component {
                   <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
                   <small>{post.frontmatter.date}</small>
                 </p>
+              </header>
+              <div className={`post-content`}>
                 {post.frontmatter.featuredimage ? (
                   <div className="featured-thumbnail">
                     <PreviewCompatibleImage
@@ -33,9 +35,11 @@ class BlogRoll extends React.Component {
                     />
                   </div>
                 ) : null}
-              </header>
-              <p>{post.excerpt}</p>
-              <Link to={post.fields.slug}>Keep Reading →</Link>
+                {post.excerpt ? <p>{post.excerpt}</p> : null}
+              </div>
+              <footer>
+                <Link to={post.fields.slug}>Keep Reading →</Link>
+              </footer>
             </article>
           ))}
       </>

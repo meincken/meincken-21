@@ -5,6 +5,8 @@ import { color } from "../shared/styles";
 
 const H1 = styled.h1`
   border: 0.1rem solid ${color.primary};
+  display: block;
+  max-width: 30rem;
   padding: 0.5rem;
 
   a {
