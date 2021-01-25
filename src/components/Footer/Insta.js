@@ -1,11 +1,11 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { StaticQuery, graphql } from 'gatsby'
-import PreviewCompatibleImage from './PreviewCompatibleImage'
+import React from "react";
+import PropTypes from "prop-types";
+import { StaticQuery, graphql } from "gatsby";
+import PreviewCompatibleImage from "./../PreviewCompatibleImage";
 import styled from "styled-components";
 
 const Insta = styled.div`
-  >div {
+  > div {
     column-count: 3;
     column-gap: 10px;
     margin: 2rem 0;
@@ -14,10 +14,10 @@ const Insta = styled.div`
 
 class Instagram extends React.Component {
   render() {
-    const { data } = this.props
-    const { edges: posts } = data.allInstaNode
+    const { data } = this.props;
+    const { edges: posts } = data.allInstaNode;
 
-    return(
+    return (
       <Insta>
         <div>
           {posts &&
@@ -30,10 +30,10 @@ class Instagram extends React.Component {
                   }}
                 />
               </figure>
-          ))}
+            ))}
         </div>
       </Insta>
-    )
+    );
   }
 }
 
@@ -43,7 +43,7 @@ Instagram.propTypes = {
       edges: PropTypes.array,
     }),
   }),
-}
+};
 
 export default () => (
   <StaticQuery
@@ -57,8 +57,7 @@ export default () => (
               preview
               localFile {
                 childImageSharp {
-                  fluid(maxWidth: 300, maxHeight: 300,
-                     quality: 100) {
+                  fluid(maxWidth: 300, maxHeight: 300, quality: 100) {
                     ...GatsbyImageSharpFluid
                   }
                 }
@@ -70,4 +69,4 @@ export default () => (
     `}
     render={(data) => <Instagram data={data} />}
   />
-)
+);

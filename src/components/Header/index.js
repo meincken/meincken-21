@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
-import { color, typography } from "../shared/styles";
-import Logo from "./Logo";
+import { color, typography } from "../../shared/styles";
+import Logo from "../Logo";
 
 const Nav = styled.nav`
   background-color: ${color.darkest};
@@ -15,9 +15,14 @@ const Nav = styled.nav`
 const Container = styled.div`
   align-items: center;
   display: flex;
+  flex-flow: column;
   justify-content: space-between;
   margin: 0 auto;
-  max-width: 117rem;
+  max-width: 96rem;
+
+  @media (min-width: 768px) {
+    flex-flow: row;
+  }
 `;
 
 const NavMenu = styled.div`

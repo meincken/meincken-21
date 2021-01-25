@@ -1,9 +1,9 @@
 import React from "react";
-import Insta from "../components/Insta";
-import Goodreads from "../components/Goodreads";
-import Last from "../components/Last";
+import Insta from "./Insta";
+import Goodreads from "./Goodreads";
+import Last from "./Last";
 import styled from "styled-components";
-import { color } from "../shared/styles";
+import { color } from "../../shared/styles";
 
 const SocialBlock = styled.div`
   background-color: ${color.dark};
@@ -14,9 +14,13 @@ const SocialBlock = styled.div`
 
   > section {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-gap: 2rem;
     padding: 2rem 0;
+
+    @media (min-width: 768px) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
   }
 `;
 

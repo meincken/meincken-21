@@ -30,7 +30,7 @@ export const bodyStyles = css`
     display: grid;
     grid-template-columns:
       [full-start] minmax(2rem, 1fr)
-      [main-start] minmax(0, 117rem) [main-end]
+      [main-start] minmax(0, 96rem) [main-end]
       minmax(2rem, 1fr) [full-end];
 
     .main,
@@ -151,6 +151,11 @@ export const bodyStyles = css`
 
   a {
     color: ${color.primary};
+    transition: all 1s;
+
+    &:hover {
+      color: ${color.primarylighten};
+    }
   }
 
   p {
@@ -195,9 +200,13 @@ export const bodyStyles = css`
 
   .latest-entries {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
     column-gap: 1rem;
     padding: 2rem 0;
+
+    @media (min-width: 768px) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
 
     > header {
       grid-column: span 3;

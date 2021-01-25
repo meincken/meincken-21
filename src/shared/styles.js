@@ -1,4 +1,5 @@
 import { css } from "styled-components";
+import { lighten } from "polished";
 
 // Global style variables
 export const background = {
@@ -6,12 +7,13 @@ export const background = {
   appInverse: "#7A8997",
   positive: "#E1FFD4",
   negative: "#FEDED2",
-  warning: "#FFF5CF"
+  warning: "#FFF5CF",
 };
 
 export const color = {
   // Palette
   primary: "#a9cc17", // acidgreem
+  primarylighten: lighten(0.05, "#a9cc17"),
 
   // Monochrome
   lightest: "#FFF",
@@ -24,31 +26,31 @@ export const color = {
   // Status
   positive: "#66BF3C",
   negative: "#FF4400",
-  warning: "#E69D00"
+  warning: "#E69D00",
 };
 
 export const spacing = {
   padding: {
     small: 10,
     medium: 20,
-    large: 30
+    large: 30,
   },
   borderRadius: {
     small: 5,
-    default: 10
-  }
+    default: 10,
+  },
 };
 
 export const typography = {
   type: {
     primary: '"Lato", sans-serif',
     code:
-      '"SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace'
+      '"SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace',
   },
   weight: {
     light: "200",
     regular: "400",
-    black: "900"
+    black: "900",
   },
   size: {
     base: "2",
@@ -62,8 +64,8 @@ export const typography = {
     l2: "4",
     l3: "4.8",
     l4: "5",
-    code: "90"
-  }
+    code: "90",
+  },
 };
 
 export const breakpoint = 600;

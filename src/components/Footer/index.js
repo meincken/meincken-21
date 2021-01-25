@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
-import { color } from "../shared/styles";
-import Logo from "./Logo";
-import Social from "../components/Social";
+import { color } from "../../shared/styles";
+import Logo from "../../components/Logo";
+import Social from "./Social";
 
-import instagram from "../img/social/instagram.svg";
-import twitter from "../img/social/twitter.svg";
+import instagram from "../../img/social/instagram.svg";
+import twitter from "../../img/social/twitter.svg";
 
 const FooterBlock = styled.footer`
   background-color: ${color.darkest};

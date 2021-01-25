@@ -1,6 +1,6 @@
-import React from 'react'
-import styled from "styled-components"
-import { color } from "../shared/styles";
+import React from "react";
+import styled from "styled-components";
+import { color } from "../../shared/styles";
 
 const GoodreadBlock = styled.div`
   display: flex;
@@ -25,18 +25,17 @@ const Goodreads = class extends React.Component {
   render() {
     return (
       <GoodreadBlock>
-        <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1335873471l/49627.jpg" alt="49627" />
+        <img
+          src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1335873471l/49627.jpg"
+          alt="49627"
+        />
         <p>
-          <span className="title">
-            Title: Sprouts of Wrath
-          </span>
-          <span className="author">
-            Author: Robert Rankin
-          </span>
+          <span className="title">Title: Sprouts of Wrath</span>
+          <span className="author">Author: Robert Rankin</span>
         </p>
       </GoodreadBlock>
-    )
+    );
   }
-}
+};
 
 export default Goodreads;
