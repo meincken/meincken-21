@@ -29,6 +29,7 @@ const FooterBlock = styled.footer`
   .menu-list {
     display: flex;
     justify-content: center;
+    padding: 2rem 0;
   }
 
   .menu {
@@ -50,8 +51,9 @@ const Footer = class extends React.Component {
           <div className="menu-list">
             <Link to="/">Home</Link>
             <Link to="/about">About</Link>
-            <Link to="/blog">Latest Stories</Link>
-            <Link to="/contact">Contact</Link>
+            <Link to="/photography">Photography</Link>
+            <Link to="/art">Art</Link>
+            <Link to="/blog">Blog</Link>
           </div>
         </section>
       </FooterBlock>

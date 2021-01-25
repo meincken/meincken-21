@@ -45,12 +45,22 @@ export const bodyStyles = css`
 
     > .full-width-image {
       align-items: center;
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center center;
       color: ${color.lighter};
       display: flex;
+      filter: grayscale(100%);
       flex-flow: column;
       height: 50vh;
       justify-content: center;
       min-height: 50rem;
+
+      h2 {
+        font-size: 3.5rem;
+        text-align: center;
+        text-shadow: 1px 1px 1px rgb(0 0 0);
+      }
     }
   }
 

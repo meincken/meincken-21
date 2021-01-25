@@ -13,7 +13,7 @@ export default class ArtIndexPage extends React.Component {
             backgroundImage: `url('/img/art-hero.jpg')`,
           }}
         >
-          <h1>Art</h1>
+          <h2>Art</h2>
         </header>
         <section>
           <ArtRoll />

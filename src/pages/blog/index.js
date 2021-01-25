@@ -11,11 +11,9 @@ export default class BlogIndexPage extends React.Component {
           className="full-width-image"
           style={{
             backgroundImage: `url('/img/blog-hero.jpg')`,
-            backgroundPosition: `bottom center`,
-            backgroundAttachment: `fixed`,
           }}
         >
-          <h1>Latest Stories</h1>
+          <h2>Latest Stories</h2>
         </header>
         <section>
           <BlogRoll />
