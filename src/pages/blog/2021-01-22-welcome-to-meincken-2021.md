@@ -4,12 +4,11 @@ title: Welcome to Meincken 2021
 date: 2021-01-22T14:23:08.622Z
 description: Site update for meincken.com. New start, new build, new environment.
 featuredpost: true
-featuredimage: /img/flavor_wheel.jpg
+featuredimage: /img/home-hero.jpg
 tags:
   - website
 ---
 
-![flavor wheel](https://res.cloudinary.com/dbqtfbchc/image/upload/v1611178494/nick-and-gayle-kinabalu_oehgvg.jpg)
 This site has been through a number of changes over the years, starting off as a simple flat HTML site, into a Wordpress site and into its current iteration built on Gatsby with a simple CMS.
 
 I wanted a simple site which I could update and customise with little fuss, Netlify offered one of the best solutions and as deployment is hooked into my Github and has very good testing before deployment, this was the best option for my site. I have used it for my personal CV site and started work on my company site.

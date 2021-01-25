@@ -2,7 +2,7 @@
 templateKey: index-page
 title: Nick Meincken
 subtitle: Front end developer / Artist / Photographer / General pest
-image: /img/home-jumbotron.jpg
+image: /img/home-hero.jpg
 heading: Cheeese doodle
 mainpitch:
   title: About Me

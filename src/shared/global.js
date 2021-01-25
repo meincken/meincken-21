@@ -171,6 +171,12 @@ export const bodyStyles = css`
   img {
     max-width: 100%;
     display: block;
+    filter: grayscale(100%);
+    transition: 1s;
+
+    &:hover {
+      filter: grayscale(0);
+    }
   }
 
   figure {
