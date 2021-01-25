@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { StaticQuery, graphql } from "gatsby";
-import PreviewCompatibleImage from "./../PreviewCompatibleImage";
+import PreviewCompatibleImage from "../../components/PreviewCompatibleImage/";
 import styled from "styled-components";
 
 const Insta = styled.div`

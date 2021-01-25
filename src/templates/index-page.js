@@ -2,8 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
 
-import Layout from "../components/Layout";
-import BlogRoll from "../components/BlogRoll";
+import Layout from "../components/Global/";
+import BlogRoll from "../components/BlogRoll/";
 
 export const IndexPageTemplate = ({ image, title, subtitle, mainpitch }) => (
   <>

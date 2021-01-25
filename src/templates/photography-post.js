@@ -1,6 +1,6 @@
-import React from 'react'
-import { graphql, Link } from 'gatsby'
-import Layout from '../components/Layout'
+import React from "react";
+import { graphql, Link } from "gatsby";
+import Layout from "../components/Global/";
 
 function renderPhoto(item) {
   let photo = item.node;
@@ -12,12 +12,12 @@ function renderPhoto(item) {
 }
 
 export default class PhotoList extends React.Component {
-
   renderPagination() {
     const { currentPage, numPages } = this.props.pageContext;
     const isFirst = currentPage === 1;
     const isLast = currentPage === numPages;
-    const prevPage = currentPage - 1 === 1 ? "/photography/" : (currentPage - 1).toString();
+    const prevPage =
+      currentPage - 1 === 1 ? "/photography/" : (currentPage - 1).toString();
     const nextPage = "/photography/" + (currentPage + 1).toString();
 
     return (
@@ -44,7 +44,8 @@ export default class PhotoList extends React.Component {
           {photos.map(renderPhoto)}
         </section>
         <nav className="main">
-          Page {this.props.pageContext.currentPage} of {this.props.pageContext.numPages}
+          Page {this.props.pageContext.currentPage} of{" "}
+          {this.props.pageContext.numPages}
           {this.renderPagination()}
         </nav>
       </Layout>
@@ -53,8 +54,13 @@ export default class PhotoList extends React.Component {
 }
 
 export const photoListQuery = graphql`
-  query ($skip: Int!, $limit: Int!) {
-    allFlickrPhoto(limit:$limit, skip: $skip, sort: { order: DESC, fields: [dateupload_date] }, filter: {media: {eq: "photo"}}) {
+  query($skip: Int!, $limit: Int!) {
+    allFlickrPhoto(
+      limit: $limit
+      skip: $skip
+      sort: { order: DESC, fields: [dateupload_date] }
+      filter: { media: { eq: "photo" } }
+    ) {
       edges {
         node {
           id
@@ -66,4 +72,4 @@ export const photoListQuery = graphql`
       }
     }
   }
-`
+`;

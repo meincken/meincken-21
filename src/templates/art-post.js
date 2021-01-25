@@ -1,10 +1,10 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { kebabCase } from 'lodash'
-import { Helmet } from 'react-helmet'
-import { graphql, Link } from 'gatsby'
-import Layout from '../components/Layout'
-import Content, { HTMLContent } from '../components/Content'
+import React from "react";
+import PropTypes from "prop-types";
+import { kebabCase } from "lodash";
+import { Helmet } from "react-helmet";
+import { graphql, Link } from "gatsby";
+import Layout from "../components/Global/";
+import Content, { HTMLContent } from "../components/Content/";
 
 export const ArtPostTemplate = ({
   content,
@@ -14,15 +14,13 @@ export const ArtPostTemplate = ({
   title,
   helmet,
 }) => {
-  const ArtPostContent = contentComponent || Content
+  const ArtPostContent = contentComponent || Content;
 
   return (
     <section className="art-post">
-      {helmet || ''}
+      {helmet || ""}
       <header>
-        <h1>
-          {title}
-        </h1>
+        <h1>{title}</h1>
         <p>{description}</p>
       </header>
       <ArtPostContent content={content} />
@@ -39,8 +37,8 @@ export const ArtPostTemplate = ({
         </footer>
       ) : null}
     </section>
-  )
-}
+  );
+};
 
 ArtPostTemplate.propTypes = {
   content: PropTypes.node.isRequired,
@@ -48,10 +46,10 @@ ArtPostTemplate.propTypes = {
   description: PropTypes.string,
   title: PropTypes.string,
   helmet: PropTypes.object,
-}
+};
 
 const ArtPost = ({ data }) => {
-  const { markdownRemark: post } = data
+  const { markdownRemark: post } = data;
 
   return (
     <Layout>
@@ -72,16 +70,16 @@ const ArtPost = ({ data }) => {
         title={post.frontmatter.title}
       />
     </Layout>
-  )
-}
+  );
+};
 
 ArtPost.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.object,
   }),
-}
+};
 
-export default ArtPost
+export default ArtPost;
 
 export const pageQuery = graphql`
   query ArtPostByID($id: String!) {
@@ -96,4 +94,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

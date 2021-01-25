@@ -1,9 +1,9 @@
 import React from "react";
 import "normalize.css";
-import { GlobalStyle } from "../shared/global";
+import { GlobalStyle } from "../../shared/global";
 import { Helmet } from "react-helmet";
-import Footer from "../components/Footer/";
-import Navbar from "../components/Header/";
+import Footer from "../../components/Footer/";
+import Navbar from "../../components/Header/";
 import useSiteMetadata from "./SiteMetadata";
 import { withPrefix } from "gatsby";
 

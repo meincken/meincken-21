@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
-import { color } from "../shared/styles";
+import { color } from "../../shared/styles";
 
 const H1 = styled.h1`
   border: 0.1rem solid ${color.primary};

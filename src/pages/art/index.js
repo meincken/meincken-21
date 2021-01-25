@@ -1,7 +1,7 @@
-import React from 'react'
+import React from "react";
 
-import Layout from '../../components/Layout'
-import ArtRoll from '../../components/ArtRoll'
+import Layout from "../../components/Global/";
+import ArtRoll from "../../components/ArtRoll/";
 
 export default class ArtIndexPage extends React.Component {
   render() {
@@ -13,14 +13,12 @@ export default class ArtIndexPage extends React.Component {
             backgroundImage: `url('/img/blog-index.jpg')`,
           }}
         >
-          <h1>
-            Art
-          </h1>
+          <h1>Art</h1>
         </header>
         <section>
           <ArtRoll />
         </section>
       </Layout>
-    )
+    );
   }
 }

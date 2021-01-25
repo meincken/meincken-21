@@ -2,11 +2,8 @@ import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 import { color } from "../../shared/styles";
-import Logo from "../../components/Logo";
+import Logo from "../../components/Global/Logo";
 import Social from "./Social";
-
-import instagram from "../../img/social/instagram.svg";
-import twitter from "../../img/social/twitter.svg";
 
 const FooterBlock = styled.footer`
   background-color: ${color.darkest};
@@ -34,7 +31,6 @@ const FooterBlock = styled.footer`
     justify-content: center;
   }
 
-  .social,
   .menu {
     grid-column: main;
 
@@ -58,23 +54,6 @@ const Footer = class extends React.Component {
             <Link to="/contact">Contact</Link>
           </div>
         </section>
-        <div className="social">
-          <a title="twitter" href="https://twitter.com/meincken">
-            <img
-              className="fas fa-lg"
-              src={twitter}
-              alt="Twitter"
-              style={{ width: "2em", height: "2em" }}
-            />
-          </a>
-          <a title="instagram" href="https://instagram.com/satanik78">
-            <img
-              src={instagram}
-              alt="Instagram"
-              style={{ width: "2em", height: "2em" }}
-            />
-          </a>
-        </div>
       </FooterBlock>
     );
   }

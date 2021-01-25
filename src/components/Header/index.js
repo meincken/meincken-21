@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 import { color, typography } from "../../shared/styles";
-import Logo from "../Logo";
+import Logo from "../../components/Global/Logo";
 
 const Nav = styled.nav`
   background-color: ${color.darkest};
