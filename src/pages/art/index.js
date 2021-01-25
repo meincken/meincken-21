@@ -10,7 +10,7 @@ export default class ArtIndexPage extends React.Component {
         <header
           className="full-width-image"
           style={{
-            backgroundImage: `url('/img/blog-index.jpg')`,
+            backgroundImage: `url('/img/art-hero.jpg')`,
           }}
         >
           <h1>Art</h1>
