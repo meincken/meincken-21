@@ -49,7 +49,7 @@ export default () => (
   <StaticQuery
     query={graphql`
       {
-        allInstaNode(limit: 9) {
+        allInstaNode(limit: 9, sort: { fields: timestamp, order: DESC }) {
           edges {
             node {
               id
