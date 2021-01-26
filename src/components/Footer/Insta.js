@@ -53,8 +53,6 @@ export default () => (
           edges {
             node {
               id
-              username
-              preview
               localFile {
                 childImageSharp {
                   fluid(maxWidth: 300, maxHeight: 300, quality: 100) {
