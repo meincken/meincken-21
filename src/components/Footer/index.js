@@ -26,14 +26,9 @@ const FooterBlock = styled.footer`
     cursor: pointer;
   }
 
-  .menu-list {
-    display: flex;
-    justify-content: center;
-    padding: 2rem 0;
-  }
-
   .menu {
     grid-column: main;
+    padding: 2rem 0;
 
     h1 {
       margin: auto;
@@ -48,13 +43,7 @@ const Footer = class extends React.Component {
         <Social />
         <section className="menu">
           <Logo />
-          <div className="menu-list">
-            <Link to="/">Home</Link>
-            <Link to="/about">About</Link>
-            <Link to="/photography">Photography</Link>
-            <Link to="/art">Art</Link>
-            <Link to="/blog">Blog</Link>
-          </div>
+          <small>&copy;Nick Meincken 1997-{new Date().getFullYear()}</small>
         </section>
       </FooterBlock>
     );

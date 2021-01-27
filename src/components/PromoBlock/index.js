@@ -9,15 +9,20 @@ const PromoBlock = styled.section`
   padding: 2rem 0;
 
   .container {
-    display: flex;
     align-items: center;
+    display: flex;
+    flex-flow: column;
     justify-content: space-between;
     margin: 0 auto;
     max-width: 96rem;
+
+    @media (min-width: 768px) {
+      flex-flow: row;
+    }
   }
 
   a {
-    background-color: white;
+    background-color: ${color.lightest};
     border: 0.1rem solid black;
     color: black;
     line-height: 1;

@@ -10,7 +10,6 @@ const SocialBlock = styled.div`
   border-top: 1px solid ${color.primary};
   border-bottom: 1px solid ${color.primary};
   grid-column: full;
-  margin-bottom: 2rem;
 
   > section {
     display: grid;
