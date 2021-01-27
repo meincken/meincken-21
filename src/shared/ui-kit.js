@@ -1,5 +1,4 @@
 import React from "react";
-import { color, typography } from "../shared/styles";
 import styled from "styled-components";
 
 const HRstyle = styled.hr`
@@ -11,65 +10,6 @@ const HRstyle = styled.hr`
 
 export const HR = () => <HRstyle />;
 
-// Heading
-const Heading2 = styled.h2`
-  border-bottom: 3px solid ${color.primary};
-  color: ${color.lightest};
-  font-weight: ${typography.weight.bold};
-  margin-bottom: 12px;
-
-  @media print {
-    border-bottom: 1px solid #000;
-    color: #1e1e1e;
-    margin-bottom: 0.6rem;
-  }
-
-  &.light {
-    color: ${color.darkest};
-    @media (min-width: 768px) {
-      float: left;
-    }
-
-    @media print {
-      color: #1e1e1e;
-    }
-  }
-
-  &.center {
-    border-bottom: 0;
-    color: ${color.darkest};
-    font-size: 1.6rem;
-    float: none;
-    margin-bottom: 4.8rem;
-    text-align: center;
-    text-transform: uppercase;
-  }
-`;
-
-export const H2 = ({ title, color }) => (
-  <Heading2 className={color}>{title}</Heading2>
-);
-
-const Heading2alt = styled.h2`
-  color: ${color.lightest};
-  font-weight: ${typography.weight.bold};
-  margin-bottom: 12px;
-`;
-
-export const H2alt = ({ title }) => <Heading2alt>{title}</Heading2alt>;
-
-const Heading3 = styled.h2`
-  color: ${color.lightest};
-  font-weight: ${typography.weight.bold};
-  margin-bottom: 12px;
-
-  @media print {
-    color: #1e1e1e;
-  }
-`;
-
-export const H3 = ({ title }) => <Heading3>{title}</Heading3>;
-
 const HeaderStyle = styled.div`
   h1 {
     color: #a9cc17;
@@ -79,18 +19,10 @@ const HeaderStyle = styled.div`
     line-height: 1;
     margin: 0;
 
-    @media print {
-      font-size: 50px;
-    }
-
     small {
       color: #e1e1e1;
       font-size: 65%;
       display: block;
-
-      @media print {
-        color: #1e1e1e;
-      }
     }
   }
 `;
@@ -103,22 +35,13 @@ export const Header = ({ title, subtitle }) => (
   </HeaderStyle>
 );
 
-const Footer = styled.footer`
-  grid-row-start: 2;
-  grid-row-end: 3;
-  grid-template-columns: repeat(12, 1fr);
-  max-width: 1040px;
-  margin: 0 auto;
-  text-align: center;
-
-  @media print {
-    display: none !important;
-  }
+const SectionStyle = styled.section`
+  grid-column: main;
+  padding: 2rem 0;
 `;
 
-export const FooterBlock = ({ title, copyright }) => (
-  <Footer>
-    <p>{title}</p>
-    <p>{copyright}</p>
-  </Footer>
+export const Section = ({ children }) => (
+  <SectionStyle>
+    <div>{children}</div>
+  </SectionStyle>
 );

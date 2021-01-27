@@ -1,13 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
-
 import Layout from "../components/Global/";
 import BlogRoll from "../components/BlogRoll/";
+import Promo from "../components/PromoBlock";
+import { Section } from "../shared/ui-kit";
 
 export const IndexPageTemplate = ({ image, title, subtitle, mainpitch }) => (
   <>
-    <div
+    <header
       className="hero-image full-width-image"
       style={{
         backgroundImage: `url(${
@@ -18,19 +19,23 @@ export const IndexPageTemplate = ({ image, title, subtitle, mainpitch }) => (
       <h2>
         {title} <small>{subtitle}</small>
       </h2>
-    </div>
+    </header>
 
-    <section>
+    <Section>
+      <h1 className="title">{mainpitch.title}</h1>
+      <p dangerouslySetInnerHTML={{ __html: mainpitch.description }} />
+    </Section>
+
+    <Promo />
+
+    <section className={`latest-entries`}>
       <div>
-        <h1 className="title">{mainpitch.title}</h1>
-        <p dangerouslySetInnerHTML={{ __html: mainpitch.description }} />
-      </div>
-
-      <div className={`latest-entries`}>
         <header>
           <h3>Latest stories</h3>
         </header>
-        <BlogRoll />
+        <section>
+          <BlogRoll />
+        </section>
         <footer>
           <Link className="btn" to="/blog">
             Read more

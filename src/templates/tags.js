@@ -2,6 +2,11 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import { Link, graphql } from "gatsby";
 import Layout from "../components/Global/";
+import styled from "styled-components";
+
+const TagList = styled.ul`
+  list-style: none;
+`;
 
 class TagRoute extends React.Component {
   render() {
@@ -25,7 +30,7 @@ class TagRoute extends React.Component {
         <section className="section">
           <Helmet title={`${tag} | ${title}`} />
           <h3>{tagHeader}</h3>
-          <ul className="taglist">{postLinks}</ul>
+          <TagList>{postLinks}</TagList>
           <p>
             <Link to="/tags/">Browse all tags</Link>
           </p>

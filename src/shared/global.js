@@ -8,8 +8,8 @@ export const bodyStyles = css`
   font-family: ${typography.type.primary};
   font-size: ${typography.size.s3}rem;
   font-weight: ${typography.weight.regular};
-  background: ${color.lightest};
-  color: ${color.darkest};
+  background: ${color.darkest};
+  color: ${color.lighter};
   height: 100%
   margin: 0;
   overflow-y: auto;
@@ -23,6 +23,10 @@ export const bodyStyles = css`
 
   * {
     box-sizing: border-box;
+  }
+
+  main {
+    padding-top: 6.9rem;
   }
 
   .social-section,
@@ -215,21 +219,39 @@ export const bodyStyles = css`
   }
 
   .latest-entries {
-    display: grid;
-    grid-template-columns: 1fr;
-    column-gap: 1rem;
-    padding: 2rem 0;
+    background-color: ${color.lighter};
+    color: ${color.dark};
+    grid-column: full;
+    padding: 2rem;
 
     @media (min-width: 768px) {
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-column: full;
+      padding: 2rem 0;
     }
 
-    > header {
-      grid-column: span 3;
-      text-align: center;
-      font-size: 3.5rem;
-      text-transform: uppercase;
+    > div {
+      margin: 0 auto;
+      max-width: 96rem;
+
+      > header {
+        grid-column: span 3;
+        text-align: center;
+        font-size: 3.5rem;
+        text-transform: uppercase;
+      }
+
+      > section {
+        display: grid;
+        grid-gap: 1rem;
+        grid-template-columns: 1fr;
+
+
+        @media (min-width: 768px) {
+          grid-template-columns: 1fr 1fr 1fr;
+        }
+      }
     }
+
 
     a {
       text-decoration: none;
@@ -264,6 +286,17 @@ export const bodyStyles = css`
     }
   }
 
+  .visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+  }
 `;
 
 export const GlobalStyle = createGlobalStyle`

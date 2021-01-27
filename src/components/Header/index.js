@@ -1,15 +1,19 @@
-import React from "react";
-import { Link } from "gatsby";
+import React, { useState, useRef } from "react";
 import styled from "styled-components";
-import { color, typography } from "../../shared/styles";
+import { color } from "../../shared/styles";
 import Logo from "../../components/Global/Logo";
+import Nav from "./Navigation";
+import Burger from "./Burger";
+import { useOnClickOutside } from "./Hooks";
 
-const Nav = styled.nav`
+const GlobalHeader = styled.header`
   background-color: ${color.darkest};
   border-bottom: 1px solid ${color.primary};
   padding: 1rem 0;
+  position: fixed;
   text-align: center;
   width: 100vw;
+  z-index: 1;
 `;
 
 const Container = styled.div`
@@ -19,42 +23,26 @@ const Container = styled.div`
   justify-content: space-between;
   margin: 0 auto;
   max-width: 96rem;
-
-  @media (min-width: 768px) {
-    flex-flow: row;
-  }
 `;
 
-const NavMenu = styled.div`
-  a {
-    cursor: pointer;
-    display: inline-block;
-    font-weight: ${typography.weight.regular};
-    font-size: ${typography.size.m1}rem;
-    padding: 0.8rem 1.3rem;
-    text-decoration: none;
-    text-transform: uppercase;
-  }
-`;
+const Navbar = () => {
+  const [open, setOpen] = useState(false);
+  const node = useRef();
+  const menuId = "main-menu";
 
-const Navbar = class extends React.Component {
-  render() {
-    return (
-      <header className={`global-header`}>
-        <Nav role="navigation" aria-label="main-navigation">
-          <Container>
-            <Logo />
-            <NavMenu>
-              <Link to="/about">About</Link>
-              <Link to="/photography">Photograpy</Link>
-              <Link to="/art">Art</Link>
-              <Link to="/blog">Blog</Link>
-            </NavMenu>
-          </Container>
-        </Nav>
-      </header>
-    );
-  }
+  useOnClickOutside(node, () => setOpen(false));
+
+  return (
+    <>
+      <GlobalHeader>
+        <Container>
+          <Burger open={open} setOpen={setOpen} aria-controls={menuId} />
+          <Logo />
+          <Nav open={open} setOpen={setOpen} id={menuId} />
+        </Container>
+      </GlobalHeader>
+    </>
+  );
 };
 
 export default Navbar;
