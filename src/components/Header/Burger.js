@@ -7,7 +7,7 @@ export const StyledBurger = styled.button`
   position: absolute;
   top: 5%;
   left: 2rem;
-  top: 2rem;
+  top: 3rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -23,21 +23,15 @@ export const StyledBurger = styled.button`
     width: 2rem;
     height: 0.25rem;
     background: ${({ open }) => (open ? color.darkest : color.lightest)};
-    border-radius: 10px;
     transition: all 0.3s linear;
     position: relative;
-    transform-origin: 1px;
+    transform-origin: 3px;
 
     :first-child {
       transform: ${({ open }) => (open ? "rotate(45deg)" : "rotate(0)")};
     }
 
     :nth-child(2) {
-      opacity: ${({ open }) => (open ? "0" : "1")};
-      transform: ${({ open }) => (open ? "translateX(20px)" : "translateX(0)")};
-    }
-
-    :nth-child(3) {
       transform: ${({ open }) => (open ? "rotate(-45deg)" : "rotate(0)")};
     }
   }
@@ -54,7 +48,6 @@ const Burger = ({ open, setOpen, ...props }) => {
       onClick={() => setOpen(!open)}
       {...props}
     >
-      <span />
       <span />
       <span />
     </StyledBurger>

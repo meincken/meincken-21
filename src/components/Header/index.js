@@ -9,7 +9,7 @@ import { useOnClickOutside } from "./Hooks";
 const GlobalHeader = styled.header`
   background-color: ${color.darkest};
   border-bottom: 1px solid ${color.primary};
-  padding: 1rem 0;
+  padding: 2rem 0;
   position: fixed;
   text-align: center;
   width: 100vw;
@@ -36,8 +36,8 @@ const Navbar = () => {
     <>
       <GlobalHeader>
         <Container>
-          <Burger open={open} setOpen={setOpen} aria-controls={menuId} />
           <Logo />
+          <Burger open={open} setOpen={setOpen} aria-controls={menuId} />
           <Nav open={open} setOpen={setOpen} id={menuId} />
         </Container>
       </GlobalHeader>

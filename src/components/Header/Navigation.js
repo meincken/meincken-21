@@ -8,16 +8,20 @@ const NavMenu = styled.nav`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: ${({ open }) => color.lightest};
+  background: ${({ open }) => color.lighter};
   transform: ${({ open }) => (open ? "translateX(0)" : "translateX(-100%)")};
   height: 100vh;
-  width: 40vw;
+  width: 80vw;
   text-align: left;
   padding: 2rem;
   position: absolute;
   top: 0;
   left: 0;
   transition: transform 0.3s ease-in-out;
+
+  @media (min-width: 768px) {
+    width: 20vw;
+  }
 
   h2 {
     color: #1e1e1e;

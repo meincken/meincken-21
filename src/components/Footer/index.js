@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "gatsby";
 import styled from "styled-components";
 import { color } from "../../shared/styles";
 import Logo from "../../components/Global/Logo";
@@ -18,20 +17,25 @@ const FooterBlock = styled.footer`
     [main-start] minmax(0, 117rem) [main-end]
     minmax(2rem, 1fr) [full-end];
 
-  a {
+  /* a {
     text-decoration: none;
     text-transform: uppercase;
-    padding: 0.8rem 1.3rem;
     display: inline-block;
     cursor: pointer;
-  }
+  } */
 
   .menu {
     grid-column: main;
     padding: 2rem 0;
+    align-items: center;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 96rem;
 
     h1 {
-      margin: auto;
+      margin-bottom: 2rem;
     }
   }
 `;

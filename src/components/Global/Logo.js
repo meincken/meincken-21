@@ -6,8 +6,13 @@ import { color } from "../../shared/styles";
 const H1 = styled.h1`
   border: 0.1rem solid ${color.primary};
   display: block;
+  font-size: 2rem;
   max-width: 30rem;
   padding: 0.5rem;
+
+  @media (min-width: 768px) {
+    font-size: 3rem;
+  }
 
   a {
     text-decoration: none;
