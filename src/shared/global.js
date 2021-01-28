@@ -50,7 +50,6 @@ export const bodyStyles = css`
     > .full-width-image {
       align-items: center;
       background-attachment: fixed;
-      background-size: cover;
       background-position: center center;
       color: ${color.lighter};
       display: flex;
@@ -59,6 +58,10 @@ export const bodyStyles = css`
       height: 50vh;
       justify-content: center;
       min-height: 50rem;
+
+      @media (min-width) {
+        background-size: cover;
+      }
 
       h2 {
         font-size: 3.5rem;
