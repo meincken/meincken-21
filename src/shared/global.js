@@ -51,6 +51,7 @@ export const bodyStyles = css`
       align-items: center;
       background-attachment: fixed;
       background-position: center center;
+      background-size: contain;
       color: ${color.lighter};
       display: flex;
       filter: grayscale(100%);
@@ -59,7 +60,7 @@ export const bodyStyles = css`
       justify-content: center;
       min-height: 50rem;
 
-      @media (min-width) {
+      @media (min-width: 768px) {
         background-size: cover;
       }
 
